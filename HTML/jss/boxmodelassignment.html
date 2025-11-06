@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model</title>
+    <style>
+        body{
+            margin: 0px;
+            padding: 0px;
+
+        }
+        html,*{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div{
+            width: 600px;
+            height: 400px;
+            background-color: burlywood;
+            margin: 0 auto;
+            display: flex;
+        }
+        img[alt]{
+            color: brown;
+        }
+        img{
+            border: 20px solid red;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="IMG_20221003_125152.jpg" alt="" width="500px">
+    </div>
+    
+</body>
+</html>

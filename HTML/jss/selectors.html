@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css selectors</title>
+    <style>
+        /* #box p{
+            color: blueviolet;
+        }
+        #box > P{
+            color: blue;
+        }
+        #box + p {
+            color: brown;
+        } */
+        #box ~ p {
+            color: aqua;
+        }
+        a:link{
+            text-decoration: none; font-size: 20px;
+        }
+        /* a:hover{
+            color: brown;
+        } */
+          a:active{
+            color: rgb(247, 243, 12);
+        } 
+        /* a:visited{
+            color: black;
+        }   */
+        ul{
+            list-style: none;
+            display: flex;
+        }
+        ul li{
+            /* background-color: aquamarine; */
+            margin: 20px;
+            border-right: 2px solid red;
+            padding: 20px;
+            
+        }
+        ul li:nth-child(5) {
+            border-right: 0px;
+        }
+        ul li::first-letter{
+            color: chartreuse;
+            font-size: 30px;
+        }
+        p::first-line{
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>home</li>
+        <li>about</li>
+        <li>services</li>
+        <li>gallery</li>
+        <li>contact</li>
+    </ul>
+    <div id="box">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dignissimos, quas minima, veritatis dolorem porro debitis accusamus perspiciatis architecto magni vero ex velit delectus veniam enim ipsam, iste quia. Eaque.
+        </p>
+        <div>
+            <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi ducimus similique minima architecto, amet aliquid accusamus quas sequi rem eum dolorem beatae nesciunt ab veritatis accusantium doloribus cupiditate dolorum. Numquam!
+            </p>
+        </div>
+    </div>
+    <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate doloremque ut consequatur debitis sed totam culpa esse optio cumque quia dolores accusamus sequi, blanditiis, perferendis iusto reprehenderit! Ullam, aperiam sequi.
+    </p>
+    <h3> Abes Engineering College </h3>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda perspiciatis, nulla, excepturi laudantium eum placeat dolor maiores quasi a laboriosam odit odio eligendi dolorum sunt consequuntur, nam facilis fugit illum.
+    </p> -->
+<a href="">visit the link</a>
+</body>
+</html>
