@@ -1,290 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Product Grid</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f7f7f8;
-      --card-bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --primary: #2563eb;
-      --primary-dark: #1e40af;
-      --border: #e5e7eb;
-      --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-      --radius: 14px;
-    }
-
-    /* Global reset + base */
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.5;
-    }
-
-    .container {
-      max-width: 1200px;
-      padding: 24px;
-      margin: 0 auto;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 24px;
-    }
-
-    header h1 {
-      font-size: 1.6rem;
-      margin: 0;
-      font-weight: 600;
-    }
-
-    .filters {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .filters select, .filters input {
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #fff;
-      color: var(--text);
-      min-width: 160px;
-    }
-
-    /* Grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    /* Card */
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
-    }
-
-    .card__media {
-      aspect-ratio: 4 / 3;
-      background: #eef2ff;
-      display: block;
-      width: 100%;
-      object-fit: cover;
-    }
-
-    .card__body {
-      padding: 14px 14px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      flex: 1;
-    }
-
-    .card__title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .card__desc {
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin: 0;
-    }
-
-    .card__meta {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .price {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .btn {
-      padding: 10px 14px;
-      border-radius: 10px;
-      background: var(--primary);
-      color: #fff;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s ease, transform 0.1s ease;
-    }
-    .btn:active { transform: scale(0.98); }
-    .btn:hover { background: var(--primary-dark); }
-
-    /* Breakpoints */
-    @media (max-width: 1200px) {
-      .grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    @media (max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; }
-      .grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 480px) {
-      .grid { grid-template-columns: 1fr; }
-      .filters select, .filters input { min-width: unset; width: 100%; }
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <header aria-label="Product listing header">
-      <h1>Responsive Product Grid</h1>
-      <div class="filters" aria-label="Filters">
-        <input type="search" placeholder="Search products…" aria-label="Search products" />
-        <select aria-label="Filter by category">
-          <option value="">All categories</option>
-          <option>Electronics</option>
-          <option>Fashion</option>
-          <option>Home</option>
-          <option>Sports</option>
-        </select>
-        <select aria-label="Sort by">
-          <option value="popular">Most popular</option>
-          <option value="low-high">Price: Low to High</option>
-          <option value="high-low">Price: High to Low</option>
-          <option value="new">New arrivals</option>
-        </select>
-      </div>
-    </header>
-
-    <main>
-      <section class="grid" aria-label="Product grid">
-        <!-- Card 1 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p1/600/450" alt="Wireless headphones" />
-          <div class="card__body">
-            <h2 class="card__title">Wireless Headphones</h2>
-            <p class="card__desc">Noise cancelling, 30h battery, comfortable fit</p>
-            <div class="card__meta">
-              <span class="price">₹2,999</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p2/600/450" alt="Smartwatch Series" />
-          <div class="card__body">
-            <h2 class="card__title">Smartwatch Series</h2>
-            <p class="card__desc">Heart-rate, GPS, water-resistant</p>
-            <div class="card__meta">
-              <span class="price">₹4,499</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p3/600/450" alt="Running Shoes" />
-          <div class="card__body">
-            <h2 class="card__title">Running Shoes</h2>
-            <p class="card__desc">Breathable mesh, lightweight cushioning</p>
-            <div class="card__meta">
-              <span class="price">₹1,799</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p4/600/450" alt="Bluetooth Speaker" />
-          <div class="card__body">
-            <h2 class="card__title">Bluetooth Speaker</h2>
-            <p class="card__desc">Deep bass, portable, 12h playtime</p>
-            <div class="card__meta">
-              <span class="price">₹1,499</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 5 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p5/600/450" alt="Backpack Pro" />
-          <div class="card__body">
-            <h2 class="card__title">Backpack Pro</h2>
-            <p class="card__desc">Laptop sleeve, water-resistant, 25L</p>
-            <div class="card__meta">
-              <span class="price">₹1,299</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 6 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p6/600/450" alt="Fitness Band" />
-          <div class="card__body">
-            <h2 class="card__title">Fitness Band</h2>
-            <p class="card__desc">Sleep tracking, steps, notifications</p>
-            <div class="card__meta">
-              <span class="price">₹999</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 7 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p7/600/450" alt="Sunglasses Classic" />
-          <div class="card__body">
-            <h2 class="card__title">Sunglasses Classic</h2>
-            <p class="card__desc">UV protection, polarized lenses</p>
-            <div class="card__meta">
-              <span class="price">₹799</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 8 -->
-        <article class="card">
-          <img class="card__media" src="https://picsum.photos/seed/p8/600/450" alt="Coffee Maker" />
-          <div class="card__body">
-            <h2 class="card__title">Coffee Maker</h2>
-            <p class="card__desc">Drip brew, auto shut-off, compact</p>
-            <div class="card__meta">
-              <span class="price">₹2,199</span>
-              <button class="btn" type="button">Add to cart</button>
-            </div>
-          </div>
-        </article>
-      </section>
-    </main>
-  </div>
-</body>
-</html>
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Responsive Product Grid</title> 
+    <link rel="stylesheet" href="styleexp9.css"> 
+</head> 
+<body> 
+    <h2>Responsive Product Grid</h2>  
+<div class="grid">  
+    <div class="card">  
+      <img src="https://via.placeholder.com/200x150" alt="Product 1">  
+      <h3>Product 1</h3>  
+      <p>High-quality item with great features.</p>  
+      <p class="price">₹499</p>  
+    </div>  
+  
+    <div class="card">  
+      <img src="https://via.placeholder.com/200x150" alt="Product 2">  
+      <h3>Product 2</h3>  
+      <p>Durable and stylish for daily use.</p>  
+      <p class="price">₹799</p>  
+    </div>  
+  
+    <div class="card">  
+      <img src="https://via.placeholder.com/200x150" alt="Product 3">  
+      <h3>Product 3</h3>  
+      <p>Lightweight and comfortable.</p>  
+      <p class="price">₹1,299</p>  
+    </div>  
+  
+    <div class="card">  
+      <img src="https://via.placeholder.com/200x150" alt="Product 4">  
+      <h3>Product 4</h3>  
+      <p>Trendy design with premium quality.</p>  
+      <p class="price">₹999</p>  
+    </div>  
+  </div> 
+</body> 
+</html> 
+ 

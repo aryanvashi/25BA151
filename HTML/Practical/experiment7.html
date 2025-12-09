@@ -1,49 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Navigation Menu</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    nav {
-      background-color: #333;
-      overflow: hidden;
-    }
-    nav ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      float: left; /* Floats items horizontally */
-    }
-    nav ul li a {
-      display: block; /* Block for full clickable area */
-      color: white;
-      text-align: center;
-      padding: 14px 20px;
-      text-decoration: none;
-    }
-    nav ul li a:hover {
-      background-color: #111;
-    }
-    .clear {
-      clear: both; /* Clears float */
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="clear"></div>
-  </nav>
-</body>
-</html>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Navigation Menu Assignment</title> 
+    <link rel="stylesheet" href="style1.css"> 
+</head> 
+<body> 
+ 
+    <div class="main-container"> 
+         
+        <div class="header"> 
+            My <span class="highlight">Website</span> Navigation 
+        </div> 
+ 
+        <ul class="menu-inline-block"> 
+            <li><a href="#">Home</a></li> 
+            <li><a href="#">About</a></li> 
+            <li><a href="#">Services</a></li> 
+            <li><a href="#">Contact</a></li> 
+        </ul> 
+ 
+        <br> <ul class="menu-float"> 
+            <li><a href="#" style="color:black">Dashboard</a></li> 
+            <li><a href="#" style="color:black">Profile</a></li> 
+            <li><a href="#" style="color:black">Messages</a></li> 
+            <li><a href="#" style="color:black">Logout</a></li> 
+        </ul> 
+ 
+        <div class="clear-fix"></div> 
+ 
+    </div> 
+ 
+</body> 
+</html> 
+ 
